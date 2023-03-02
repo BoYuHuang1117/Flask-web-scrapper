@@ -3,7 +3,7 @@ import scrapy
 class WebSpiderLSVP(scrapy.Spider):
     name = "webspiderlsvp"
     start_urls = ["https://lsvp.com/portfolio/"]
-
+    FILTERED_RESULT = None
     # .txt
     # .url
 
@@ -17,4 +17,5 @@ class WebSpiderLSVP(scrapy.Spider):
             if "acquired" not in status and "public" not in status:
                 ans.append(url)
         
+        WebSpiderLSVP.FILTERED_RESULT = ans
         yield ans
