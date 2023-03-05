@@ -33,8 +33,32 @@ flask run
 
 - [Deploy SCRAPYMike in Docker Ubuntu](#Deployment)
 
-First check if the port is available
+Check if the port is available
 ```bash
 sudo nc localhost 5000 < /dev/null; echo $?
 ```
 
+Start the server in docker
+```bash
+sudo bash start.sh
+```
+List of container status
+```bash
+sudo docker ps
+```
+
+Stop the server in docker
+```bash
+sudo docker stop container {CONTAINER_ID}
+```
+
+OPTION: push image onto Docker repositories
+1. login in bash with docker account
+2. tag image
+3. push
+
+```bash
+sudo docker login
+sudo docker tag {app} {username}/{repo-folder-name}
+sudo docker push {username}/{repo-folder-name}
+```
